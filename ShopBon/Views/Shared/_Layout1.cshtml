@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/all.min.css" rel="stylesheet" />
+    <link href="~/Public/css/layout.css" rel="stylesheet" />
+
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <section id="hearder" class="bg-primary">
+        <div class="container">
+
+            <div class="col-md-2 logo">
+                <a href="@Url.Action("Index","Site")"><img src="~/Public/Images/logo/logoNH.jpg" class="img-circle" /></a>
+            </div>
+            <div class="col-md-4">
+
+                <form style="margin-top:70px" class=" d-flex">
+
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="mainmenu" class="mainmenu">
+        <div class="container">
+
+            <div class="col=md-9">
+                @Html.Action("ChuDe", "Site")
+
+                @Html.Action("Detai", "Site")
+
+            </div>
+        </div>
+
+    </section>
+    <section id="maincontent">
+    </section>
+    <section id="footer">
+    </section>
+    <section id="copyright">
+    </section>
+
+    @RenderBody()
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <a href="~/Scripts/popper.min.js.map">~/Scripts/popper.min.js.map</a>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
